@@ -9,7 +9,15 @@ jobs:
         with:
           node-version: '10.x'
       - uses: actions/checkout@master
-
       - run: 'npm install -g npm'
-
       - run: 'npm -v'
+      - run: npm audit fix
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v1.7.0
+        with:
+          title: Security Update into master.
+          labels: Auto PR
+          branch: securityFix
+          token: ${{ secrets.GITHUB }}
+
