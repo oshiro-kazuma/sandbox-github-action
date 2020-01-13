@@ -10,3 +10,4 @@ jobs:
           node-version: '10.x'
       - uses: actions/checkout@master
       - run: npm install -g npm
+      - rum: npm -v
