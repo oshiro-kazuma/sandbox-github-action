@@ -1,4 +1,5 @@
 name: Create Security Fix Pull Request
+on: [push]
 jobs:
   patch:
     name: Create PR
